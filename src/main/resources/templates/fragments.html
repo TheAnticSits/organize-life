@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:fragment="head">
     <meta charset="UTF-8"/>
-    <title th:text="${title}">Organize Your Life</title>
+    <title th:text="${title}">Title</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -11,7 +11,12 @@
 <body>
 
 <nav th:fragment="navigation">
-    <h1>navstuff</h1>
+    <a href="/home/signin">Sign In</a> |
+    <a href="/home/signup">Sign Up</a> |
+    <a href="/home/add">Add New Tasks</a>
+    <p>
+        <a href="/home/today">View Today's Tasks!</a>
+    </p>
 </nav>
 
 </body>
