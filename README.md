@@ -6,6 +6,8 @@ This project utilizes Java, Spring, MAMP, and Thymeleaf for routing, controllers
 
 Future Features
 •	Ability to delete tasks permanently from Db.
+
 •	Persistent repeat of tasks that are done every day.
+
 •	Transportation times for getting to and from tasks.
 
