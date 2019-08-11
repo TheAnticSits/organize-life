@@ -33,7 +33,7 @@ public class HomeController {
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public String processAddTaskForm(@RequestParam String taskName){
         tasks.add(taskName);
-        tasks.add(importance);
+        
         return "redirect:";
     }
 }
