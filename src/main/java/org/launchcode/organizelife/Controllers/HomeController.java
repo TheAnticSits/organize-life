@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -29,9 +30,11 @@ public class HomeController {
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayTaskForm(Model model){
-        Date date = new Date();
+        String pattern = "yyyy-MM-dd";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        String date = simpleDateFormat.format(new Date());
         model.addAttribute("title", "New Tasks!");
-        model.addAttribute("date", date.toString());
+        model.addAttribute("date", date);
         return "home/add";
     }
 
