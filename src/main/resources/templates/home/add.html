@@ -5,21 +5,23 @@
 <body class="container">
 
 <h1 th:text="${title}">Default Title</h1>
-
+<h4 th:text="${date}">Date</h4>
 <nav th:replace="fragments :: navigation"></nav>
 
     <h1>Adding A New Task?  Let's do it!</h1>
 <form method="post">
     <input type="text" name="taskName" />
-    <input type="submit" value="Add This Task" />
 
-    <select type="text" name="importance">
-        <option value="one">Not Optional</option>
-        <option value="two">Really Important</option>
-        <option value="three">Regular Important</option>
-        <option value="four">Not as Important</option>
-        <option value="five">It Can Wait</option>
+
+    <select name="importance">
+        <option value="Not Optional">Not Optional</option>
+        <option value="Really Important">Really Important</option>
+        <option value="Regular Important">Regular Important</option>
+        <option value="Not as Important">Not as Important</option>
+        <option value="It Can Wait">It Can Wait</option>
     </select>
+
+    <input type="submit" value="Add This Task" />
 </form>
 
 </body>
