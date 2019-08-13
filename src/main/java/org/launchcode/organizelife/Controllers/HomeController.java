@@ -45,4 +45,15 @@ public class HomeController {
 
         return "redirect:";
     }
+
+    @RequestMapping(value = "today")
+
+    public String today(Model model){
+
+
+        model.addAttribute("tasks", tasks);
+        model.addAttribute("title", "Organize Your Life!");
+
+        return "home/today";
+    }
 }
