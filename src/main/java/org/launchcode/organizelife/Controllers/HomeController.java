@@ -46,7 +46,7 @@ public class HomeController {
         return "redirect:";
     }
 
-    @RequestMapping(value = "today")
+    @RequestMapping(value = "theday")
 
     public String today(Model model){
 
@@ -54,6 +54,6 @@ public class HomeController {
         model.addAttribute("tasks", tasks);
         model.addAttribute("title", "Organize Your Life!");
 
-        return "home/today";
+        return "home/theday";
     }
 }
