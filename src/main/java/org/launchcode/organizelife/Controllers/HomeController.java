@@ -1,5 +1,6 @@
 package org.launchcode.organizelife.Controllers;
 
+import org.launchcode.organizelife.Models.Task;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +17,7 @@ import java.util.Date;
 public class HomeController {
 
 
-    ArrayList<String> tasks = new ArrayList<>();
+    ArrayList<Task> tasks = new ArrayList<>();
     @RequestMapping(value = "")
 
     public String index(Model model){
@@ -30,9 +31,11 @@ public class HomeController {
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayTaskForm(Model model){
+
         String pattern = "yyyy-MM-dd";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
         String date = simpleDateFormat.format(new Date());
+
         model.addAttribute("title", "New Tasks!");
         model.addAttribute("date", date);
         return "home/add";
@@ -40,9 +43,14 @@ public class HomeController {
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public String processAddTaskForm(@RequestParam String taskName, @RequestParam String importance){
-        tasks.add(taskName);
+
+        Task newTask = new Task(taskName, importance);
+
+        tasks.add(newTask);
 
 
+/*        tasks.add(taskName);
+        tasks.add(importance);*/
         return "redirect:";
     }
 

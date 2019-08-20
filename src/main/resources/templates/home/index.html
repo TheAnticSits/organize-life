@@ -13,7 +13,10 @@
 
     <p th:unless="${tasks} and ${tasks.size()}">No Tasks Yet</p>
     <ul>
-        <li th:each="task:${tasks}" th:text="${task}"></li>
+        <li th:each="task:${tasks}">
+            <td th:text="${task.task}"></td>
+            <td th:text="${task.importance}"></td>
+        </li>
     </ul>
 
 </form>
