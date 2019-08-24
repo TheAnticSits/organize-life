@@ -9,5 +9,18 @@
 <nav th:replace="fragments :: navigation"></nav>
 
 <h1>ADD USER PAGE</h1>
+<form method="post">
+    <div class="form-group">
+        <div>Let's create an Original Name!</div>
+        <input type="text" name="userName" />
+        <div>We are going to need a password too...</div>
+        <input type="text" name="password" />
+        Let's just verify that to make sure it's the password you want.
+        <input type="text" name="password" />
+        <div>We will also need to have an email to make sure it's you.</div>
+        <input type="email" name="email" />
+    </div>
+</form>
+
 </body>
 </html>

@@ -8,13 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("user")
 public class UserController {
 
-    @RequestMapping(value = "user")
-    public String index(Model model){
+    @RequestMapping(value = "add")
+    public String add(Model model){
 
-
-        model.addAttribute("user");
-        model.addAttribute("title", "Organize Your Life!");
-
-        return "home/index";
+        return "user/add";
     }
 }
