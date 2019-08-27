@@ -26,6 +26,6 @@ public class UserController {
         User newUser = new User(userName, email, password);
         users.add(newUser);
 
-        return "redirect:";
+        return "user/add";
     }
 }
