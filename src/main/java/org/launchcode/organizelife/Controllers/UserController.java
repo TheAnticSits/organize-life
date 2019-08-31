@@ -1,5 +1,6 @@
 package org.launchcode.organizelife.Controllers;
 
+import com.sun.xml.internal.bind.v2.TODO;
 import org.launchcode.organizelife.Models.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,8 +27,10 @@ public class UserController {
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public String processAddUser(Model model, @RequestParam String userName, @RequestParam String email, @RequestParam String password, @RequestParam String passwordVerify) {
         User newUser = new User(userName, email, password, passwordVerify);
+/*
 
-
+        TODO this is comparing correctly.  Now I need to send it to correct pages and of course make it persistant
+*/
 
         if(password.equals(passwordVerify)){
             users.add(newUser);
