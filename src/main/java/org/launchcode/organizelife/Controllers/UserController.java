@@ -17,21 +17,25 @@ public class UserController {
     static ArrayList<User> users = new ArrayList<>();
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
-    public String add(Model model, @ModelAttribute User user, String verify){
+    public String add(Model model, @ModelAttribute User user, String verify) {
         model.addAttribute("title", "Create New User");
 
         return "user/add";
     }
-    @RequestMapping( value = "add", method = RequestMethod.POST)
+
+    @RequestMapping(value = "add", method = RequestMethod.POST)
     public String processAddUser(Model model, @RequestParam String userName, @RequestParam String email, @RequestParam String password, @RequestParam String passwordVerify) {
         User newUser = new User(userName, email, password, passwordVerify);
 
-        if (newUser.getPassword() == newUser.getPasswordVerify()) {
+
+
+        if(password.equals(passwordVerify)){
             users.add(newUser);
-            System.out.println("worked");
             return "user/add";
+        }else {
+
+            return "home/congratulations";
         }
-        System.out.println("didn't work");
-        return "user/add";
     }
 }
+
