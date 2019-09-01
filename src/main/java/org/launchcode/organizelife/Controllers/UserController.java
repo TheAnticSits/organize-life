@@ -1,6 +1,6 @@
 package org.launchcode.organizelife.Controllers;
 
-import com.sun.xml.internal.bind.v2.TODO;
+
 import org.launchcode.organizelife.Models.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,14 +30,16 @@ public class UserController {
 /*
 
         TODO this is comparing correctly.  Now I need to send it to correct pages and of course make it persistant
+        TODO need to return the typed info of username and email back to the view
 */
 
         if(password.equals(passwordVerify)){
             users.add(newUser);
-            return "user/add";
-        }else {
 
             return "home/congratulations";
+        }else {
+
+            return "user/add?name=" + newUser.getUserName();
         }
     }
 }
