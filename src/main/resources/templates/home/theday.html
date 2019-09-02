@@ -15,7 +15,7 @@
     <h1> Let's check some stuff off the list! </h1>
     <p th:unless="${tasks} and ${tasks.size()}">No Tasks Yet</p>
 
-
+<!--TODO Make this page display all present tasks with checkboxes for removing them.-->
     <div th:each="task : ${tasks}" class="checkbox">
         <input type="checkbox" name="taskName" th:value="${task.taskName}"/>
         <label th:for="${task.name}" th:text="${task.name}"></label>
