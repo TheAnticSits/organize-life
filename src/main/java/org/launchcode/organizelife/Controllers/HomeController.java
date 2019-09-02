@@ -54,6 +54,27 @@ public class HomeController {
         return "redirect:";
     }
 
+
+
+    @RequestMapping(value = "theday", method = RequestMethod.GET)
+    public String displayRemoveTaskForm(Model model) {
+        model.addAttribute("title", "Today's Tasks");
+        model.addAttribute("title", "Check off What you've Completed");
+        return "home/theday";
+    }
+
+    @RequestMapping(value = "theday", method = RequestMethod.POST)
+    public String processRemoveTaskForm(@RequestParam String taskName) {
+
+        /*for (String task : taskName) {
+            task.remove(taskName);
+            TODO make this able to remove tasks that were entered.
+        }*/
+        System.out.println("Remove Goes Here!");
+        return "redirect:";
+    }
+
+
     @RequestMapping(value = "theday")
 
     public String today(Model model){
