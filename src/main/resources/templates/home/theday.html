@@ -10,19 +10,28 @@
 <p>
     <a href="/home/add">Add New Tasks</a>
 </p>
+
 <form method="post">
     <h1>Check Out Your Schedule!</h1>
     <h1> Let's check some stuff off the list! </h1>
     <p th:unless="${tasks} and ${tasks.size()}">No Tasks Yet</p>
 
 <!--TODO Make this page display all present tasks with checkboxes for removing them.-->
-    <div th:each="task : ${tasks}" class="checkbox">
+
+    <ul>
+        <li th:each="task:${tasks}">
+            <td th:text="${task.task}"></td> -------
+            <td th:text="${task.importance}"></td>
+        </li>
+    </ul>
+
+    <!--    <div th:each="task : ${tasks}" class="checkbox">
         <input type="checkbox" name="taskName" th:value="${task.taskName}"/>
         <label th:for="${task.name}" th:text="${task.name}"></label>
         <br />
     </div>
 
-    <input type="submit" value="Finished These" />
+    <input type="submit" value="Finished These" />-->
 
     <!--
         this was used as a placeholder that just displayed the tasks w/o the ability to remove them.

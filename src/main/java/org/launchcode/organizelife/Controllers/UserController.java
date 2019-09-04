@@ -39,7 +39,7 @@ public class UserController {
             return "home/congratulations";
         }else {
 
-            return "user/add?name=" + newUser.getUserName();
+            return "user/add";
         }
     }
 }
