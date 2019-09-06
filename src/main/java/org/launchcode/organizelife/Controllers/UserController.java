@@ -19,13 +19,15 @@ public class UserController {
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String add(Model model, @ModelAttribute User user, String verify) {
+
         model.addAttribute("title", "Create New User");
 
         return "user/add";
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public String processAddUser(Model model, @RequestParam String userName, @RequestParam String email, @RequestParam String password, @RequestParam String passwordVerify) {
+    public String processAddUser(Model model, User user, @RequestParam String userName, @RequestParam String email, @RequestParam String password, @RequestParam String passwordVerify) {
+
         User newUser = new User(userName, email, password, passwordVerify);
 /*
 

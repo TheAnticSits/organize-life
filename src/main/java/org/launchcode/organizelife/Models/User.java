@@ -5,6 +5,9 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 public class User {
 
+    private int userID;
+    private static int nextId = 1;
+
     private String userName;
     private String email;
     private String password;
@@ -53,4 +56,20 @@ public class User {
         this.passwordVerify = passwordVerify;
     }
 
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+
+    public static int getNextId() {
+        return nextId;
+    }
+
+    public static void setNextId(int nextId) {
+        User.nextId = nextId;
+    }
 }
