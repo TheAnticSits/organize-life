@@ -29,6 +29,7 @@ public class UserController {
     public String processAddUser(Model model, User user, @RequestParam String userName, @RequestParam String email, @RequestParam String password, @RequestParam String passwordVerify) {
 
         User newUser = new User(userName, email, password, passwordVerify);
+
 /*
 
         TODO this is comparing correctly.  Now I need to send it to correct pages and of course make it persistant
@@ -37,7 +38,7 @@ public class UserController {
 
         if(password.equals(passwordVerify)){
             users.add(newUser);
-
+            model.addAttribute(newUser);
             return "home/congratulations";
         }else {
 
