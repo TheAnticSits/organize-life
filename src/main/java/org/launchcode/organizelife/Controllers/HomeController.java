@@ -1,8 +1,11 @@
 package org.launchcode.organizelife.Controllers;
 
 import org.launchcode.organizelife.Models.Task;
+import org.launchcode.organizelife.Models.data.TaskDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,6 +19,8 @@ import java.util.Date;
 @RequestMapping("home")
 public class HomeController {
 
+    @Autowired
+    private TaskDao taskDao;
 
     ArrayList<Task> tasks = new ArrayList<>();
     @RequestMapping(value = "")
@@ -23,14 +28,14 @@ public class HomeController {
     public String index(Model model){
 
 
-        model.addAttribute("tasks", tasks);
+        model.addAttribute("tasks", taskDao.findAll());
         model.addAttribute("title", "Organize Your Life!");
 
         return "home/index";
     }
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
-    public String displayTaskForm(Model model){
+    public String displayAddTaskForm(Model model){
 
         String pattern = "yyyy-MM-dd";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
@@ -42,11 +47,10 @@ public class HomeController {
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public String processAddTaskForm(@RequestParam String taskName, @RequestParam String importance){
+    public String processAddTaskForm(@ModelAttribute Task newTask, Model model){
 
-        Task newTask = new Task(taskName, importance);
 
-        tasks.add(newTask);
+        taskDao.save(newTask);
 
 
 /*        tasks.add(taskName);
@@ -56,15 +60,19 @@ public class HomeController {
 
 
 
-    @RequestMapping(value = "theday", method = RequestMethod.GET)
+    @RequestMapping(value = "remove", method = RequestMethod.GET)
     public String displayRemoveTaskForm(Model model) {
-        model.addAttribute("title", "Today's Tasks");
+        model.addAttribute("tasks", taskDao.findAll());
         model.addAttribute("title", "Check off What you've Completed");
         return "home/theday";
     }
 
-    @RequestMapping(value = "theday", method = RequestMethod.POST)
+    @RequestMapping(value = "remove", method = RequestMethod.POST)
     public String processRemoveTaskForm(@RequestParam String taskName) {
+/*
+        for(int taskId : taskIds){
+            taskDao.delete(taskId);
+        }*/
 
         /*for (String task : taskName) {
             task.remove(taskName);

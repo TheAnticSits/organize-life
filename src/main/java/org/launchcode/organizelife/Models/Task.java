@@ -1,20 +1,33 @@
 package org.launchcode.organizelife.Models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Task {
-    private String task;
+
+    @Id
+    @GeneratedValue
+    private int id;
+
+    private String taskName;
     private String importance;
 
-    public Task(String taskName, String importance){
-        this.task = taskName;
-        this.importance = importance;
+    public Task(){
+
     }
 
-    public String getTask() {
-        return task;
+    public int getId() {
+        return id;
     }
 
-    public void setTask(String task) {
-        this.task = task;
+    public String getTaskName() {
+        return taskName;
+    }
+
+    public void setTaskName(String taskName) {
+        this.taskName = taskName;
     }
 
     public String getImportance() {
