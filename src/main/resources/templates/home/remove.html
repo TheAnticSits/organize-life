@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+<p>
+<a href="/home">Homescreen</a>
+</p>
+<p>
+    <a href="/home/add">Add New Tasks</a>
+</p>
+
+<form method="post">
+
+    <div th:each="task:${tasks}" class="checkbox">
+        <input type="checkbox" name="taskIds" th:value="${task.id}" th:id="${task.id}"/>
+        <label th:for="${task.id}" th:text="${task.taskName}"></label>
+        <br />
+    </div>
+
+    <input type="submit" value="Remove Tasks" />
+</form>
+</body>
+</html>

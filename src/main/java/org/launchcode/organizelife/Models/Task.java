@@ -15,10 +15,13 @@ public class Task {
     private String importance;
 
     public Task(){
+        this.id = id;
+        this.taskName = taskName;
+        this.importance = importance;
 
     }
 
-    public int getId() {
+    public int id() {
         return id;
     }
 
