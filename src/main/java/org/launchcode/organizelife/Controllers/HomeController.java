@@ -60,15 +60,19 @@ public class HomeController {
 
 
 
-    @RequestMapping(value = "remove", method = RequestMethod.GET)
+    @RequestMapping(value = "theday", method = RequestMethod.GET)
     public String displayRemoveTaskForm(Model model) {
         model.addAttribute("tasks", taskDao.findAll());
         model.addAttribute("title", "Check off What you've Completed");
         return "home/theday";
     }
 
-    @RequestMapping(value = "remove", method = RequestMethod.POST)
-    public String processRemoveTaskForm(@RequestParam String taskName) {
+    @RequestMapping(value = "theday", method = RequestMethod.POST)
+    public String processRemoveTaskForm(@RequestParam int [] taskIds) {
+
+        for(int taskId : taskIds){
+//            taskDao.delete(taskId);
+        }
 /*
         for(int taskId : taskIds){
             taskDao.delete(taskId);
