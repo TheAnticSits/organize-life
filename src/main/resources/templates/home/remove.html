@@ -15,7 +15,7 @@
 <form method="post">
 
     <tr th:each="task:${tasks}" class="checkbox">
-        <input type="checkbox" name="tasks" th:value="${task.taskName}" th:id="${task.taskName}"/>
+        <input type="checkbox" name="taskIds" th:value="${task.id}" th:id="${task.id}"/>
         <label th:for="${task.taskName}" th:text="${task.taskName}"></label>
         <br />
     </tr>

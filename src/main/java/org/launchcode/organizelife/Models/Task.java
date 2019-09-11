@@ -12,16 +12,17 @@ public class Task {
     private int id;
 
     private String taskName;
+
     private String importance;
 
     public Task(){
-        this.id = id;
+        this.id = getId();
         this.taskName = taskName;
         this.importance = importance;
 
     }
 
-    public int id() {
+    public int getId() {
         return id;
     }
 

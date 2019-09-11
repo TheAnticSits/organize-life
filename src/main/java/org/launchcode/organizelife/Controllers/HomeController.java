@@ -63,7 +63,7 @@ public class HomeController {
     @RequestMapping(value = "remove", method = RequestMethod.GET)
     public String displayRemoveTaskForm(Model model) {
         model.addAttribute("tasks", taskDao.findAll());
-        model.addAttribute("title", "Check off What you've Completed");
+        model.addAttribute("title", "Check Off What you've Completed");
         return "home/remove";
     }
 
@@ -73,25 +73,8 @@ public class HomeController {
         for(int taskId : taskIds){
             taskDao.deleteById(taskId);
         }
-/*
 
-        /*for (String task : taskName) {
-            task.remove(taskName);
-            TODO make this able to remove tasks that were entered.
-        }*/
-        System.out.println("Remove Goes Here!");
         return "redirect:";
     }
 
-
-/*    @RequestMapping(value = "theday")
-
-    public String today(Model model){
-
-
-        model.addAttribute("tasks", tasks);
-        model.addAttribute("title", "Organize Your Life!");
-
-        return "home/theday";
-    }*/
 }
