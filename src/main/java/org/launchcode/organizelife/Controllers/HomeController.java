@@ -52,14 +52,10 @@ public class HomeController {
 
         taskDao.save(newTask);
 
-
-/*        tasks.add(taskName);
-        tasks.add(importance);*/
         return "redirect:";
     }
 
-
-
+    
     @RequestMapping(value = "remove", method = RequestMethod.GET)
     public String displayRemoveTaskForm(Model model) {
         model.addAttribute("tasks", taskDao.findAll());
