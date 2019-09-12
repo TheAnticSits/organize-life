@@ -10,7 +10,7 @@
 <nav th:replace="fragments :: navigation"></nav>
 <form>
 <h1>Check Out What's Going On Today!</h1>
-
+    <h4 th:text="${date}">Date</h4>
     <p th:unless="${tasks} and ${tasks.size()}">No Tasks Yet</p>
     <ul>
         <tr th:each="task:${tasks}">
