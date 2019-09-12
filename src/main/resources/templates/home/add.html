@@ -11,18 +11,43 @@
     <h1>Adding A New Task?  Let's do it!</h1>
 <form method="post">
     <div class="form-group">
-
+    <h3>What Is The Task?</h3>
     <input type="text" name="taskName" />
     </div>
 
     <div>
+        <h3>How Important To You Is Getting This Done?</h3>
     <select name="importance">
-        <option value="Not Optional">Not Optional</option>
-        <option value="Really Important">Really Important</option>
-        <option value="Regular Important">Regular Important</option>
-        <option value="Not as Important">Not as Important</option>
-        <option value="It Can Wait">It Can Wait</option>
+        <option value="not optional">Not Optional</option>
+        <option value="really important">Really Important</option>
+        <option value="regular important">Regular Important</option>
+        <option value="not super important">Not Super Important</option>
+        <option value="not important">Not Important</option>
     </select>
+    </div>
+<p></p>
+
+    <div>
+        <h3>How Long Do You Think This'll Take?</h3>
+        <select name="time">
+            <option int=".25">.25</option>
+            <option int=".5">.5</option>
+            <option int=".75">.75</option>
+            <option int="1">1</option>
+            <option int="1.25">1.25</option>
+            <option int="1.5">1.5</option>
+            <option int="1.75">1.75</option>
+            <option int="2">2</option>
+            <option int="2.25">2.25</option>
+            <option int="2.5">2.5</option>
+            <option int="2.75">2.75</option>
+            <option int="3">3</option>
+            <option int="3.25">3.25</option>
+            <option int="3.5">3.5</option>
+            <option int="3.75">3.75</option>
+            <option int="4">4</option>
+        </select>
+
     </div>
     <input type="submit" value="Add This Task" />
 </form>

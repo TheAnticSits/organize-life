@@ -55,7 +55,7 @@ public class HomeController {
         return "redirect:";
     }
 
-    
+
     @RequestMapping(value = "remove", method = RequestMethod.GET)
     public String displayRemoveTaskForm(Model model) {
         model.addAttribute("tasks", taskDao.findAll());

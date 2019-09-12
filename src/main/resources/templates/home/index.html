@@ -14,8 +14,9 @@
     <p th:unless="${tasks} and ${tasks.size()}">No Tasks Yet</p>
     <ul>
         <tr th:each="task:${tasks}">
-            <td th:text="${task.taskName}"></td> -------
-            <td th:text="${task.importance}"></td>
+            You want to  <td th:text="${task.taskName}"></td>
+            and it's   <td th:text="${task.importance}"></td>
+            and it'll probably take   <td th:text="${task.time}"></td> hour(s).
             <br />
         </tr>
     </ul>

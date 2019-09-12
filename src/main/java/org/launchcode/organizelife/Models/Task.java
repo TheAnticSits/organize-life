@@ -15,10 +15,14 @@ public class Task {
 
     private String importance;
 
+    private double time;
+
     public Task(){
         this.id = getId();
         this.taskName = taskName;
         this.importance = importance;
+        this.time = time;
+
 
     }
 
@@ -40,5 +44,13 @@ public class Task {
 
     public void setImportance(String importance) {
         this.importance = importance;
+    }
+
+    public double getTime() {
+        return time;
+    }
+
+    public void setTime(double time) {
+        this.time = time;
     }
 }
