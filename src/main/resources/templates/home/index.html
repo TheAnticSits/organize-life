@@ -13,13 +13,15 @@
     <h4 th:text="${date}">Date</h4>
     <p th:unless="${tasks} and ${tasks.size()}">No Tasks Yet</p>
     <ul>
-        <tr th:each="task:${tasks}">
+        <h4><tr th:each="task:${tasks}">
             You want to  <td th:text="${task.taskName}"></td>
             and it's   <td th:text="${task.importance}"></td>
             and it'll probably take   <td th:text="${task.time}"></td> hour(s).
             <br />
-        </tr>
+        </tr></h4>
     </ul>
+<h2>This'll probably take you</h2>
+    <br>
 
 </form>
 </body>

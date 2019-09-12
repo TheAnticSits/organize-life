@@ -31,6 +31,8 @@ public class HomeController {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
         String date = simpleDateFormat.format(new Date());
 
+
+
         model.addAttribute("tasks", taskDao.findAll());
         model.addAttribute("title", "Organize Your Life!");
         model.addAttribute("date", date);
