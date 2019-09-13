@@ -12,16 +12,37 @@
 <h1>Check Out What's Going On Today!</h1>
     <h4 th:text="${date}">Date</h4>
     <p th:unless="${tasks} and ${tasks.size()}">No Tasks Yet</p>
+
+<!--    <div th:with="double someVariable=0">-->
     <ul>
+
         <h4><tr th:each="task:${tasks}">
             You want to  <td th:text="${task.taskName}"></td>
             and it's   <td th:text="${task.importance}"></td>
             and it'll probably take   <td th:text="${task.time}"></td> hour(s).
+
+             <!--<td th:with="someVariable = ${someVariable + task.time}"></td>
+            <span th:text="${someVariable}"></span>-->
             <br />
+
         </tr></h4>
+        <h1><p th:if="${tasks} and ${tasks.size()}">This will take you</p>
+
+
+            <tr th:each="task:${tasks}">
+                <a name="times" th:value="${task.time}" th:id="${task.time}"/>
+<!--                <label th:for="${task.time}" th:with="double someVariable = ${someVariable + task.time}"></label>-->
+
+                <br />
+            </tr>
+            </h1>
     </ul>
-<h2>This'll probably take you</h2>
-    <br>
+
+
+
+
+
+
 
 </form>
 </body>

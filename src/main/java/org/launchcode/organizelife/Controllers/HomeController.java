@@ -1,8 +1,9 @@
-package org.launchcode.organizelife.Controllers;
 
+package org.launchcode.organizelife.Controllers;
 import org.launchcode.organizelife.Models.Task;
 import org.launchcode.organizelife.Models.data.TaskDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -31,11 +32,10 @@ public class HomeController {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
         String date = simpleDateFormat.format(new Date());
 
-
-
         model.addAttribute("tasks", taskDao.findAll());
         model.addAttribute("title", "Organize Your Life!");
         model.addAttribute("date", date);
+
 
         return "home/index";
     }
@@ -75,7 +75,7 @@ public class HomeController {
         for(int taskId : taskIds){
             taskDao.deleteById(taskId);
         }
-
+//        TODO Fix this breaks when no tasks are checked off and remove is selected.
         return "redirect:";
     }
 
