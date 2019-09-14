@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.validation.constraints.Null;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -35,7 +36,6 @@ public class HomeController {
         model.addAttribute("tasks", taskDao.findAll());
         model.addAttribute("title", "Organize Your Life!");
         model.addAttribute("date", date);
-
 
         return "home/index";
     }
@@ -74,8 +74,11 @@ public class HomeController {
 
         for(int taskId : taskIds){
             taskDao.deleteById(taskId);
+
         }
 //        TODO Fix this breaks when no tasks are checked off and remove is selected.
+
+
         return "redirect:";
     }
 
