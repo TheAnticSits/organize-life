@@ -92,6 +92,7 @@ public class HomeController {
         for(Task time : times){
 
             output += time.getTime();
+
         }
 
         return output;

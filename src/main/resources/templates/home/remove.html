@@ -21,7 +21,7 @@
         <br />
     </tr>
 
-    <h1><p th:unless="${tasks} and ${tasks.size()}">No Tasks To Check Off</p></h1>
+    <h1><p th:unless="${tasks} and ${tasks.size()}">CONGRATULATIONS!!! <br> You completed all of your tasks!!! <br>YOU ROCK!!!</p></h1>
     <input th:if="${tasks} and ${tasks.size()}" type="submit" value="Remove Tasks" />
 
 </form>
