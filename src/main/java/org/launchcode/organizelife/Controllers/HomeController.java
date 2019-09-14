@@ -93,6 +93,7 @@ public class HomeController {
 
             output += time.getTime();
         }
+
         return output;
 
     }

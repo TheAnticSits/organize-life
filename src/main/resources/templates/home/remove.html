@@ -20,8 +20,9 @@
         <label th:for="${task.taskName}" th:text="${task.taskName}"></label>
         <br />
     </tr>
-    <h1><p th:unless="${tasks} and ${tasks.size()}">No Tasks Yet</p></h1>
-    <input type="submit" value="Remove Tasks" />
+
+    <h1><p th:unless="${tasks} and ${tasks.size()}">No Tasks To Check Off</p></h1>
+    <input th:if="${tasks} and ${tasks.size()}" type="submit" value="Remove Tasks" />
 
 </form>
 </body>
