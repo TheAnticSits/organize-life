@@ -27,6 +27,7 @@ public class HomeController {
     ArrayList<Task> tasks = new ArrayList<>();
     @RequestMapping(value = "")
 
+
     public String index(Model model){
 
         String pattern = "yyyy-MM-dd";
@@ -36,6 +37,8 @@ public class HomeController {
         model.addAttribute("tasks", taskDao.findAll());
         model.addAttribute("title", "Organize Your Life!");
         model.addAttribute("date", date);
+        model.addAttribute("totalTime", getSumofTimes());
+
 
         return "home/index";
     }
@@ -80,6 +83,18 @@ public class HomeController {
 
 
         return "redirect:";
+    }
+
+    public double getSumofTimes(){
+
+        double output = 0;
+        Iterable<Task> times = taskDao.findAll();
+        for(Task time : times){
+
+            output += time.getTime();
+        }
+        return output;
+
     }
 
 }
