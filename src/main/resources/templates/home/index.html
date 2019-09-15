@@ -10,22 +10,25 @@
 <nav th:replace="fragments :: navigation"></nav>
 <form>
 <h1>Check Out What's Going On Today!</h1>
+    
     <h4 th:text="${date}">Date</h4>
     <p th:unless="${tasks} and ${tasks.size()}">No Tasks Yet</p>
 
     <ul>
 
 
-        <h4><tr th:each="task:${tasks}">
-            You want to  <td th:text="${task.taskName}"></td>
+        <tr th:each="task:${tasks}">
+            <h4>You want to  <td th:text="${task.taskName}"></td>
             and it's   <td th:text="${task.importance}"></td>
-            and it'll probably take   <td th:text="${task.time}"></td> hour(s).
+            and it'll probably take   <td th:text="${task.time}"></td> hour(s).</h4>
+            Created on <td th:text="${date}"></td>
+            <br>
 
 <!--             <td th:each="times = ${times + task.time}"></td>-->
 
             <br />
 
-        </tr></h4>
+        </tr>
         <br>
         <br>
         <br>
@@ -33,14 +36,6 @@
         <h1><p th:if="${tasks} and ${tasks.size()}">This will take you</p>
 
         <p th:text="${totalTime}"></p><p>Hour(s)</p>
-
-<!--            <tr th:each="task:${tasks}">
-                <a name="times" th:value="${task.time}" th:id="${task.time}"/>-->
-
-
-
-
-<!--                <label th:for="${task.time}" th:with="double someVariable = ${someVariable + task.time}"></label>-->
 
                 <br />
             </tr>

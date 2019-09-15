@@ -3,6 +3,8 @@ package org.launchcode.organizelife.Models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.Date;
+
 
 @Entity
 public class Task {
@@ -16,6 +18,8 @@ public class Task {
     private String importance;
 
     private double time;
+
+    private Date date;
 
     public Task(){
         this.id = getId();
