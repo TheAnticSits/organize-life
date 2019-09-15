@@ -1,31 +1,38 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/" xmlns:color="http://www.w3.org/1999/xhtml">
 <head th:fragment="head">
     <meta charset="UTF-8"/>
     <title th:text="${title}">Organize Your Life</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 <nav th:fragment="navigation">
-    <p>
+    <h3>Get back to start
     <a href="/home">Homescreen</a>
-    </p>
-    <p>
+    </h3>
+    <br>
+    <h4>Personalization</h4>
+    <p>Log In to personalize your experience
     <a href="/home/login">Log In</a>
     </p>
-    <p>
+    <p>Sign up and make your own lists
     <a href="/user/add">Sign Up</a>
     </p>
-    <p>
+    <h3>Get to Work!</h3>
+    <h4>Add some new stuff to your lists
     <a href="/home/add">Add New Tasks</a>
-    </p>
-    <p>
+    </h4>
+    <h4>Got some stuff done?  Cool.
         <a href="/home/remove">Let's Check Off Some Stuff!</a>
-    </p>
+    </h4>
+    <br>
+    <br>
+    <br>
 
 </nav>
 
