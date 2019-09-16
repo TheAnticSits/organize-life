@@ -39,10 +39,10 @@ public class UserController {
         if(password.equals(passwordVerify)){
             users.add(newUser);
             model.addAttribute(newUser);
-            return "home/index";
+            return "home/add";
         }else {
 
-            return "user/add";
+            return "user/index";
         }
     }
 }
