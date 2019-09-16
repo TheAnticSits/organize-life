@@ -42,7 +42,7 @@ public class UserController {
             return "home/add";
         }else {
 
-            return "user/index";
+            return "user/add";
         }
     }
 }
