@@ -5,13 +5,16 @@
 <body class="container">
 
 <h1 th:text="${title}">Default Title</h1>
-
-
+<h4 th:text="${date}">Date</h4>
 <nav th:replace="fragments :: navigation"></nav>
-<form>
-    <h1>USER INDEX PAGE</h1>
+
+<h3>Welcome To The Party</h3>
+<form method="post">
+    <div class="form-group">
+        <h1><td th:text="${user.userName}"></td></h1>
+    </div>
 
 </form>
-</body>
 
+</body>
 </html>
