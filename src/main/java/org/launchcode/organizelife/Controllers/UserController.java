@@ -77,36 +77,9 @@ public class UserController {
                 return "home/add";
             }
         }
-/*        userDao.getUserName(userName);
-        System.out.println(userName);*/
- //       if(checkUserName(userName, password)=true){
+
             return "user/add";
         }
-/*        if(password.equals()){
-            users.add(newUser);
-            model.addAttribute(newUser);
-            userDao.save(newUser);
-            return "user/index";
-        }else {*/
-
-//            return "user/add";
-
-
-//    public ArrayList<User> thisUser = new ArrayList<>();
-/*public int checkUserName(String userName, String password) {
-
-
-    Iterable<User> users = userDao.findAll();
-    for (User user : users) {
-
-        if (user.getUserName().equals(userName)) {
-            return true;
-        }
-
-    }
-
-    return false;
-}*/
 
 }
 
