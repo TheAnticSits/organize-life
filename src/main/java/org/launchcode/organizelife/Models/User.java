@@ -23,8 +23,12 @@ public class User {
         this.userName = userName;
         this.email = email;
         this.password = password;
+    }
 
-
+    public User(){
+        this.userName = getUserName();
+        this.email = getEmail();
+        this.password = getPassword();
 
     }
 

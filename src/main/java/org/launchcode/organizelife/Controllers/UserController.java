@@ -71,6 +71,14 @@ public class UserController {
     @RequestMapping(value = "login", method = RequestMethod.POST)
     public String processLogin(Model model, User user, @RequestParam String userName, @RequestParam String password) {
 
+        Iterable<User> users = userDao.findAll();
+        for(User name : users){
+            if((name.getUserName().equals(userName)) && name.getPassword().equals(password)){
+                return "home/add";
+            }
+        }
+/*        userDao.getUserName(userName);
+        System.out.println(userName);*/
  //       if(checkUserName(userName, password)=true){
             return "user/add";
         }
