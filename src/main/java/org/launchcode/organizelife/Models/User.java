@@ -2,23 +2,28 @@ package org.launchcode.organizelife.Models;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import java.util.Date;
 
+@Entity
 public class User {
 
+    @Id
+    @GeneratedValue
     private int userID;
-    private static int nextId = 1;
-
     private String userName;
     private String email;
     private String password;
-    private String passwordVerify;
+    private Date date;
 
 
     public User(String userName, String email, String password, String passwordVerify) {
         this.userName = userName;
         this.email = email;
         this.password = password;
-        this.passwordVerify = passwordVerify;
+
 
 
     }
@@ -48,28 +53,8 @@ public class User {
         this.password = password;
     }
 
-    public String getPasswordVerify() {
-        return passwordVerify;
-    }
-
-    public void setPasswordVerify(String passwordVerify) {
-        this.passwordVerify = passwordVerify;
-    }
-
-
     public int getUserID() {
         return userID;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
-    }
-
-    public static int getNextId() {
-        return nextId;
-    }
-
-    public static void setNextId(int nextId) {
-        User.nextId = nextId;
-    }
 }

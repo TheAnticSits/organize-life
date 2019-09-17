@@ -8,22 +8,17 @@
 <h4 th:text="${date}">Date</h4>
 <nav th:replace="fragments :: navigation"></nav>
 
-<!--TODO need more validation.-->
 
-<h1>Sign up with New Username!</h1>
+<h1>Log In and Get Organized!</h1>
 <form method="post">
     <div class="form-group">
-        <h3><div>Let's create an Original Name!</div></h3>
+        <h3><div>What is your User name?</div></h3>
         <input type="text" name="userName"/>
-        <h3><div>We are going to need a password too...</div></h3>
+        <h3><div>Please enter your password</div></h3>
         <input type="password" name="password" />
-        Let's just verify that to make sure it's the password you want.
-        <input type="password" name="passwordVerify" />
-        <h3><div>We will also need to have an email to make sure it's you.</div></h3>
-        <input type="email" name="email" />
     </div>
     <div>
-        <h2>Submit User Information</h2>
+        <h2>Get started!</h2>
         <input type="submit" value="DO IT!" />
     </div>
 </form>
