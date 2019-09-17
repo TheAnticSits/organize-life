@@ -26,6 +26,7 @@ public class Task {
         this.taskName = taskName;
         this.importance = importance;
         this.time = time;
+        this.date = date;
 
 
     }
@@ -56,5 +57,9 @@ public class Task {
 
     public void setTime(double time) {
         this.time = time;
+    }
+
+    public Date getDate() {
+        return date;
     }
 }
