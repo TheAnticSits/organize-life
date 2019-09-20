@@ -1,8 +1,6 @@
 package org.launchcode.organizelife.Models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 
@@ -19,6 +17,7 @@ public class Task {
 
     private double time;
 
+    @Temporal(TemporalType.DATE)
     private Date date;
 
     public Task(){
